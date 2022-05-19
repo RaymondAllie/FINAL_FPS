@@ -17,5 +17,7 @@ public class Pixel {
    L += num;
    return num;
   }
-  
+  color getColor(){
+    return COLOR;
+  }
 }

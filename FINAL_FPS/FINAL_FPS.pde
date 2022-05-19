@@ -15,8 +15,8 @@ ArrayList<Structure> Structures = new ArrayList<Structure>();
        test[i][j] = new Pixel(color(44, 3, 39), false);
      }
    }
-   screen(test);
-   
+   //screen(test);
+   Persons.add(new Person(0, 0, 0, 0, 0, 0, new float[]{0,0,0}, 0, false, 0.01, 0.1));
  }
  
  void draw() {
@@ -27,8 +27,10 @@ ArrayList<Structure> Structures = new ArrayList<Structure>();
      s.render(MAP);
    }
    if (Persons.size() > 0) {
-     screen(Persons.get(0).getView());
+     //screen(Persons.get(0).getView());
+     Persons.get(0).getView();
    }
+   //println("works?");
  }
  
  
