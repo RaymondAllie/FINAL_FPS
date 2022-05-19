@@ -1,7 +1,7 @@
 public class Person extends Obj {
   int health;
   boolean enemy;
-  public Person(int x, int y, int z, int xAng, int yAng, int zAng, int mag, int health, boolean enemy) {
+  public Person(int x, int y, int z, int xAng, int yAng, int zAng, int[] mag, int health, boolean enemy) {
     super(x, y, z, xAng, yAng, zAng, mag, 2);
     this.health = health;
     this.enemy = enemy;

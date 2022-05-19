@@ -3,9 +3,9 @@ public class Obj {
   int[][] vector;
   int I;
 
-  public Obj(int x, int y, int z, int xAng, int yAng, int zAng, int mag, int i) {
+  public Obj(int x, int y, int z, int xAng, int yAng, int zAng, int[] mag, int i) {
     cords = new int[]{x, y, z};
-    vector = new int[][]{{mag}, {xAng, yAng, zAng}};
+    vector = new int[][]{mag, {xAng, yAng, zAng}};
     L = 0;
     I = i;
   }
