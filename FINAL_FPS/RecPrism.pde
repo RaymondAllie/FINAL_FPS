@@ -1,11 +1,11 @@
 public class RecPrism extends Structure {
-   public RecPrism(int x, int y, int z, int xAng, int yAng, int zAng, int[] mag, color surf, color out) {
+   public RecPrism(int x, int y, int z, float xAng, float yAng, float zAng, float[] mag, color surf, color out) {
       super(x, y, z, xAng, yAng, zAng, mag, surf, out);
       
    }
    void render(Pixel[][][] map) {
      int[] cords = getCords();
-     int[][] vector = getVector();
+     float[][] vector = getVector();
      color clr = getSurface();
      for (int i = 0; i < vector[0][0]; i++) {
        int xmap = (int) (cos(vector[1][0]) * i) + cords[0];
