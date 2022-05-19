@@ -17,11 +17,6 @@ void setup() {
   }
   //screen(test);
   Persons.add(new Person(0, 0, 0, 0, 0, 0, new float[]{0, 0, 0}, 0, false, 0.01, 0.1));
-  println(roundNum(0.3));
-  println(roundNum(0.5));
-  println(roundNum(5.5));
-  println(roundNum(4.56));
-  println(roundNum(7.48));
 }
 
 void draw() {
