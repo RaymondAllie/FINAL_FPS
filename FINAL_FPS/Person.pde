@@ -19,19 +19,28 @@ public class Person extends Obj {
   void changeHealth(int num) {
     health += num;
   }
-  void getView() {
+  Pixel[][] getView() {
     int[] cord = getCords();
-    //Pixel[][] screen = new Pixel[height][width];
+    Pixel[][] screen = new Pixel[height][width];
     for (float angY = lookY - PI/6; angY < lookY + PI/6; angY += PI/3/height) {
       for (float angZ = lookZ - PI/6; angZ < lookZ + PI/6; angZ += PI/3/width) {
         for (int dis = 0; cord[0] + cos(angY) * dis < width && cord[0] + cos(angY) * dis > 0 && cord[1] + sin(angY) * dis < height && cord[1] + sin(angY) * dis > 0 && cord[2] + sin(angZ) * dis < zLength && cord[2] + sin(angZ) * dis > 0; dis++) {
           if (MAP[(int)(cord[0] + dis*cos(angY))][(int)(cord[1] + dis*sin(angY))][(int)(cord[2] + dis*sin(angZ))] != null){
             Pixel pixel = MAP[(int)(cord[0] + dis*cos(angY))][(int)(cord[1] + dis*sin(angY))][(int)(cord[2] + dis*sin(angZ))];
-            set((int)((angY - lookY + PI/6)/(PI/3)),(int)((angZ - lookZ + PI/6)/(PI/3)),pixel.getColor());
-          }
+            ArrayList<int[]> toChange = scale(pixel, cord);
+            for (int[] place : toChange) {
+              if (screen[place[0]][place[1]] == null) {
+                 screen[place[0]][place[1]] =  pixel;  
+              }
+            }
+        }
         }
       }
     }
-    //return screen;
+    return screen;
+  }
+  ArrayList<int[]> scale(Pixel pixel, int[] view) {
+    ArrayList<int[]> toReturn = new ArrayList<int[]>();
+    
   }
 }

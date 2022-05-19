@@ -42,7 +42,7 @@ void screen(Pixel[][] lis) {
   }
 }
 
-int roundNum(float x) {
+int roun(float x) {
   if (x % 1 >= 0.5) return (int)(x) + 1;
   return (int)(x);
 }
